@@ -1,0 +1,40 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>template_base1</title>
+    
+	
+   <style>
+        body {
+            font-family: sans-serif;
+        }
+        
+        h2 {
+            color: rgb(230, 107, 0);
+        }
+        .pdftitle{
+          text-align:center;
+        }
+        
+    </style>
+
+
+  </head>
+  <body>
+  <div>
+<hr>
+<div class="pdftitle">
+<h1>Tourism Analystics</h1>
+<h3>Data collected to perform visualization and prediction under different topics.</h3>
+</div>
+<hr>    
+      {% block content %}	  
+      {% endblock content %}
+<hr>
+  </div>
+  
+ 
+  </body>
+</html>

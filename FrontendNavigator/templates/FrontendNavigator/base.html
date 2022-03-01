@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tourism Analysis & Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+
+    
+</head>
+
+<body>
+    
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-inner">
+      <div style="width:20px; height:20px; display:inline-block; float:left; padding:5px;"><img src="https://www.raijeewan.com.np/includes/img/body/flag.gif" border="0" alt="animated-nepal-flag-image-0001" height="45px"; /></div>
+
+        {% comment %} <div style="width:20px; height:5px; display:inline-block; float:left; padding:10px;"><img src="https://www.raijeewan.com.np/includes/img/body/flag.gif" style="height:47.6651px"/></div> {% endcomment %}
+        <a class="navbar-brand" href="{% url 'index' %}">
+         <span>Tourism Analytics</span></a>
+            <div class="btn-group pull-right">
+             {% if user.is_authenticated %} 
+              <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" > 
+                {{ user.username }} <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item"  href="/admin">ADMIN VIEW</a>
+                      <div class="dropdown-divider"></div>
+
+                    <a class="dropdown-item" href="/admin/logout"> Log Out</a>
+                  </ul>
+              </div>
+              {% else %}
+              <a href="/admin" class="btn btn-default ml-2">ADMIN LOGIN</a>
+             {% endif %}
+            </div> 
+
+            <ul class="collapse navbar-collapse nav navbar-nav top-menu">
+              <li class='nav-itemm'>
+                 <a href="{%url 'topic_list' %}">Analysis</a>
+                  <a href="{%url 'predict_list' %}">Predictions</a>
+              </li>
+
+                <li >
+                    
+                    <form class="navbar-search pull-left" action="{% url 'search' %}" method="GET" value="{{request.GET.query}}">{% csrf_token %}
+                      <input placeholder="Search" class="search-query form-control col-md-10" name="query"type="text" style=" margin-left: 250px;">
+                      <!-- <a href="" style="display: inline-block;">&#128269;</a> -->
+                      <!-- <a href=""class="fa fa-search"></a> -->
+                    </form>
+                   
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+{% block content %}
+{% endblock content %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</body>
+
+
+</html>
+

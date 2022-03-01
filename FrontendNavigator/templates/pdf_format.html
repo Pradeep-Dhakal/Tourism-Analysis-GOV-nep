@@ -1,0 +1,76 @@
+{% extends 'pdfbase.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<ul>
+
+
+         <span style="color:purple">ANALYSIS REPORT: {{all_details.id}}</span></a>
+        </div>
+<br>
+
+<br>
+ <b><span style="color:green"> <h2>{{all_details.title}}</h2></span></b>
+ 
+
+ <i>{{all_details.created_at}} </i><br>
+ 
+ {{all_details.body}} 
+<br>
+
+</ul>
+
+<div>
+{{html_table | safe }}
+</div>
+
+
+
+<br>
+{% if all_details.id == 1 %}
+
+<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id1.png" width=700 height=auto alt="Image">
+{% endif %}
+{% if all_details.id == 2 %}
+
+<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id2.png" width=700 height=auto alt="Image">
+
+
+{% endif %}
+{% if all_details.id == 3 %}
+
+<<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id3.png" width=700 height=auto alt="Image">
+
+
+{% endif %}
+
+{% if all_details.id == 4 %}
+
+<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id4.png" width=700 height=auto alt="Image">
+<br>
+<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id44.png" width=700 height=auto alt="Image">
+
+{% endif %}
+{% if all_details.id == 5 %}
+
+<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id5.png" width=700 height=auto alt="Image">
+
+
+{% endif %}
+
+
+{% if all_details.id == 6 %}
+
+<img src="C:\django-project\TOURISM-ANALYSIS-AND-PREDICTIONS-IN-NEPAL-master\AnalysisEngine\static\img\id6.png" width=700 height=auto alt="Image">
+
+
+{% endif %}
+
+
+
+</ul>
+
+
+{% endblock content %}
